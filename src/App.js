@@ -32,3 +32,27 @@ class App extends Component {
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+/**** Desitred API ****
+
+<Card key={item.id}>
+  <div style={{ padding: '15px' }}>
+    <Card.Title>{item.title}</Card.Title>
+    <Card.Description trunc={3}>{item.plot}</Card.Description>
+    <Card.SubTitle>{subTitle}</Card.SubTitle>
+    <Card.Meta>{meta}</Card.Meta>
+    <Card.Marker />
+  </div>
+  <Card.Seperator />
+  <Card.Poster src={item.posterUrl} alt={item.title} />
+</Card>
+
+********/
