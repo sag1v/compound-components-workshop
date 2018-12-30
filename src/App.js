@@ -1,25 +1,31 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Card from './components/Card';
+import items from './items';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <div className="cards-list">
+          {
+            items.map(item => {
+              const subTitle = `Genres: ${item.genres.join(', ')}`;
+              const meta = `Director: ${item.director}`;
+              return (
+                <Card
+                  key={item.id}
+                  id={item.id}
+                  title={item.title}
+                  subTitle={subTitle}
+                  meta={meta}
+                  description={item.plot}
+                  imageUrl={item.posterUrl}
+                />
+              );
+            })
+          }
+        </div>
       </div>
     );
   }
